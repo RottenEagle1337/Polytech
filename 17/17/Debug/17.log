@@ -1,0 +1,4 @@
+﻿  17.cpp
+C:\Users\Антон\source\repos\17\17\17.cpp(51,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Антон\source\repos\17\17\17.cpp(67,14): warning C4018: <=: несоответствие типов со знаком и без знака
+  17.vcxproj -> C:\Users\Антон\source\repos\17\Debug\17.exe
