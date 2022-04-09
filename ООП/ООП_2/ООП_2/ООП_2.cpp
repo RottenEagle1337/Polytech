@@ -19,10 +19,11 @@ int main()
 
     //First();
     //Second();
-    //Third();
+    Third();
     //Fourth();
     //Fifth();
-
+    //Sixth();
+    //Eighth();
     return 0;
 }
 
@@ -126,4 +127,138 @@ void Fifth() {
     }
 
     cout << "Всего возможно " << result << " рассадок" << endl;
+}
+
+void Sixth() {
+    float a, b, c;
+    int i = 0;
+
+    cout << "Введите начальный вклад: ";
+    cin >> a;
+    cout << "Введите процентную ставку: ";
+    cin >> b;
+    cout << "Введите желаемый результат: ";
+    cin >> c;
+
+    while (a < c) {
+        a += a * (b / 100);
+        i++;
+    }
+
+    cout << "Через " << i << " лет вы достигните цели" << endl;
+}
+
+void Seventh() {
+    int a1, a2, a3, b1, b2, b3, n;
+
+    char oper;
+
+    cout << "Введите первую сумму: ";
+    cin >> a1 >> a2 >> a3;
+
+    cout << "Введите знак: ";
+    cin >> oper;
+
+    switch (oper)
+    {
+    case '+':
+        cout << "Введите вторую сумму: ";
+        cin >> b1 >> b2 >> b3;
+
+        a3 += b3;
+        if (a3 >= 12) {
+            a2++;
+            a3 -= 12;
+        }
+
+        a2 += b2;
+        if (a2 >= 20) {
+            a1++;
+            a2 -= 20;
+        }
+
+        a1 += b1;
+
+        cout << "Сумма: " << a1 << " " << a2 << " " << a3 << endl;
+
+        break;
+
+    case '-':
+        cout << "Введите вторую сумму: ";
+        cin >> b1 >> b2 >> b3;
+
+        a3 -= b3;
+        if (a3 < 0) {
+            a2--;
+            a3 += 12;
+        }
+
+        a2 -= b2;
+        if (a2 < 0) {
+            a1--;
+            a2 += 20;
+        }
+
+        a1 -= b1;
+
+        cout << "Разность: " << a1 << " " << a2 << " " << a3 << endl;
+
+        break;
+
+    case '*':
+        cout << "Введите число: ";
+        cin >> n;
+
+        a3 *= n;
+        a2 *= n;
+        a1 *= n;
+
+        if (a3 >= 12) {
+            a2 += a3 / 12;
+            a3 %= 12;
+        }
+
+        if (a2 >= 20) {
+            a1 += a2 / 20;
+            a2 %= 20;
+        }
+
+        cout << "Ответ: " << a1 << " " << a2 << " " << a3 << endl;
+
+        break;
+
+    default:
+        cout << "Ошибка знака!" << endl;
+    }
+}
+
+void Eighth() {
+    int a, b, c, d;
+    char op, n;
+
+    cout << "Введите первую дробь: ";
+    cin >> a >> n >> b;
+    cout << "Введите знак: ";
+    cin >> op;
+    cout << "Введите вторую дробь: ";
+    cin >> c >> n >> d;
+
+    switch (op)
+    {
+    case '+':
+        cout << "Сумма = " << (a * d + b * c) << "/" << (b * d) << endl;
+        break;
+    case '-':
+        cout << "Разность = " << (a * d - b * c) << "/" << (b * d) << endl;
+        break;
+    case '*':
+        cout << "Произведение = " << (a * c) << "/" << (b * d) << endl;
+        break;
+    case '/':
+        cout << "Частное = " << (a * d) << "/" << (b * c) << endl;
+        break;
+    default:
+        cout << "Ошибка!" << endl;
+        break;
+    }
 }
